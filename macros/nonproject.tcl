@@ -1,6 +1,6 @@
 create_project -in_memory -part xck26-sfvc784-2LV-c
 set_property source_mgmt_mode All [current_project]
-#set_property IP_REPO_PATHS ../src/ip [current_project] 
+set_property IP_REPO_PATHS ../src/ip [current_project] 
 
 #read_vhdl ../src/hdl/Dahua_To_Fifo.vhd
 #read_vhdl ../src/hdl/Econ_To_Fifo.vhd
