@@ -32,7 +32,9 @@
       "v_tpg_1": "",
       "xlslice_2": "",
       "xlslice_3": "",
-      "axis_data_fifo_0": ""
+      "axis_data_fifo_0": "",
+      "system_ila_0": "",
+      "system_ila_1": ""
     },
     "components": {
       "zynq_ultra_ps_e_0": {
@@ -1605,7 +1607,7 @@
         "inst_hier_path": "xlconcat_0",
         "parameters": {
           "NUM_PORTS": {
-            "value": "1"
+            "value": "2"
           }
         }
       },
@@ -2418,6 +2420,87 @@
         "xci_name": "design_1_axis_data_fifo_0_0",
         "xci_path": "ip/design_1_axis_data_fifo_0_0/design_1_axis_data_fifo_0_0.xci",
         "inst_hier_path": "axis_data_fifo_0"
+      },
+      "system_ila_0": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "design_1_system_ila_0_0",
+        "xci_path": "ip/design_1_system_ila_0_0/design_1_system_ila_0_0.xci",
+        "inst_hier_path": "system_ila_0",
+        "parameters": {
+          "C_NUM_MONITOR_SLOTS": {
+            "value": "4"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXI": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "SLOT_1_AXI": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "SLOT_2_AXI": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          },
+          "SLOT_3_AXI": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:aximm:1.0",
+            "vlnv": "xilinx.com:interface:aximm_rtl:1.0"
+          }
+        }
+      },
+      "system_ila_1": {
+        "vlnv": "xilinx.com:ip:system_ila:1.1",
+        "xci_name": "design_1_system_ila_0_1",
+        "xci_path": "ip/design_1_system_ila_0_1/design_1_system_ila_0_1.xci",
+        "inst_hier_path": "system_ila_1",
+        "parameters": {
+          "C_NUM_MONITOR_SLOTS": {
+            "value": "4"
+          },
+          "C_SLOT": {
+            "value": "3"
+          },
+          "C_SLOT_0_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "C_SLOT_1_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "C_SLOT_2_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "C_SLOT_3_INTF_TYPE": {
+            "value": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        },
+        "interface_ports": {
+          "SLOT_0_AXIS": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "SLOT_1_AXIS": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "SLOT_2_AXIS": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          },
+          "SLOT_3_AXIS": {
+            "mode": "Monitor",
+            "vlnv_bus_definition": "xilinx.com:interface:axis:1.0",
+            "vlnv": "xilinx.com:interface:axis_rtl:1.0"
+          }
+        }
       }
     },
     "interface_nets": {
@@ -2430,31 +2513,36 @@
       "axis_data_fifo_0_M_AXIS": {
         "interface_ports": [
           "axis_data_fifo_0/M_AXIS",
-          "v_tpg_0/s_axis_video"
+          "v_tpg_0/s_axis_video",
+          "system_ila_1/SLOT_2_AXIS"
         ]
       },
       "ps8_0_axi_periph_M00_AXI": {
         "interface_ports": [
           "ps8_0_axi_periph/M00_AXI",
-          "v_frmbuf_wr_0/s_axi_CTRL"
+          "v_frmbuf_wr_0/s_axi_CTRL",
+          "system_ila_0/SLOT_3_AXI"
         ]
       },
       "ps8_0_axi_periph_M01_AXI": {
         "interface_ports": [
           "ps8_0_axi_periph/M01_AXI",
-          "v_tpg_0/s_axi_CTRL"
+          "v_tpg_0/s_axi_CTRL",
+          "system_ila_0/SLOT_2_AXI"
         ]
       },
       "ps8_0_axi_periph_M02_AXI": {
         "interface_ports": [
           "ps8_0_axi_periph/M02_AXI",
-          "v_frmbuf_rd_0/s_axi_CTRL"
+          "v_frmbuf_rd_0/s_axi_CTRL",
+          "system_ila_0/SLOT_0_AXI"
         ]
       },
       "ps8_0_axi_periph_M03_AXI": {
         "interface_ports": [
           "ps8_0_axi_periph/M03_AXI",
-          "v_tpg_1/s_axi_CTRL"
+          "v_tpg_1/s_axi_CTRL",
+          "system_ila_0/SLOT_1_AXI"
         ]
       },
       "v_frmbuf_rd_0_m_axi_mm_video": {
@@ -2466,7 +2554,8 @@
       "v_frmbuf_rd_0_m_axis_video": {
         "interface_ports": [
           "v_frmbuf_rd_0/m_axis_video",
-          "v_tpg_1/s_axis_video"
+          "v_tpg_1/s_axis_video",
+          "system_ila_1/SLOT_0_AXIS"
         ]
       },
       "v_frmbuf_wr_0_m_axi_mm_video": {
@@ -2478,13 +2567,15 @@
       "v_tpg_0_m_axis_video": {
         "interface_ports": [
           "v_tpg_0/m_axis_video",
-          "v_frmbuf_wr_0/s_axis_video"
+          "v_frmbuf_wr_0/s_axis_video",
+          "system_ila_1/SLOT_3_AXIS"
         ]
       },
       "v_tpg_1_m_axis_video": {
         "interface_ports": [
           "axis_data_fifo_0/S_AXIS",
-          "v_tpg_1/m_axis_video"
+          "v_tpg_1/m_axis_video",
+          "system_ila_1/SLOT_1_AXIS"
         ]
       },
       "zynq_ultra_ps_e_0_M_AXI_HPM0_LPD": {
@@ -2505,7 +2596,15 @@
           "axi_smc/aresetn",
           "ps8_0_axi_periph/M02_ARESETN",
           "ps8_0_axi_periph/M03_ARESETN",
-          "axis_data_fifo_0/s_axis_aresetn"
+          "axis_data_fifo_0/s_axis_aresetn",
+          "system_ila_0/resetn",
+          "system_ila_1/resetn"
+        ]
+      },
+      "v_frmbuf_rd_0_interrupt": {
+        "ports": [
+          "v_frmbuf_rd_0/interrupt",
+          "xlconcat_0/In1"
         ]
       },
       "v_frmbuf_wr_0_interrupt": {
@@ -2570,7 +2669,9 @@
           "v_frmbuf_rd_0/ap_clk",
           "ps8_0_axi_periph/M02_ACLK",
           "ps8_0_axi_periph/M03_ACLK",
-          "axis_data_fifo_0/s_axis_aclk"
+          "axis_data_fifo_0/s_axis_aclk",
+          "system_ila_0/clk",
+          "system_ila_1/clk"
         ]
       },
       "zynq_ultra_ps_e_0_pl_resetn0": {
